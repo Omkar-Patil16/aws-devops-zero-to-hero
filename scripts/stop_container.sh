@@ -1,5 +1,7 @@
 #!/bin/bash
-set -e
 
-# Stop the running container (if any)
-echo "Hi"
+# Get the ID of the running container
+container_id=$(docker ps -q)
+
+# Stop the running container
+docker rm -f  "$container_id"
